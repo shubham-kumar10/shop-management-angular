@@ -16,6 +16,7 @@ export class AuthenticationService {
   accessToken: string; // JWT token
   loggedIn: boolean = false;
   private authenticationApiUrl = environment.baseUrl;
+  //private authenticationApiUrl = environment.baseUrl + 'smart-shop/';
   private token: string;
   username: string;
   pending: boolean = false;
@@ -37,6 +38,7 @@ export class AuthenticationService {
   logout() {
     this.loggedIn = false;
     this.setToken(null);
+    this.router.navigate(['/welcome'])
   }
 
 }

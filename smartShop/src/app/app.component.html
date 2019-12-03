@@ -38,7 +38,7 @@
             <i class="material-icons text-white">person </i> {{this.authService.username}}
           </li>
           <li class="nav-item nav-link active text-white" *ngIf="loggedIn()" (click)="this.authService.logout()">
-            <a class="menu-link" routerLink="search-bar/" (click)="exit()">Logout</a>
+            <a class="menu-link" routerLink="welcome/" (click)="exit()">Logout</a>
           </li>
           <li class="nav-item nav-link active text-white" (click)="clickOnAddFavorite()" *ngIf="!loggedIn()">
             <a class="menu-link" routerLink="login/">Login</a>

@@ -19,6 +19,7 @@ export class UserService {
     //this.userList.push(user);
     console.log("Inside add user of service ")
     console.log(user)
+    // return this._httpClient.post<any>(this.url + "signUp-service/register", user)
     return this._httpClient.post<any>(this.url + "register", user)
     this.router.navigate(['login']);
   }

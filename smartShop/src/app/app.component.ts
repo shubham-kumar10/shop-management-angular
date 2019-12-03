@@ -13,7 +13,7 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.loggedIn();
-    this.router.navigate(['search-bar']);
+    this.router.navigate(['welcome']);
   }
   constructor(private authService: AuthenticationService, public router: Router, private productService: ProductService) {
   }

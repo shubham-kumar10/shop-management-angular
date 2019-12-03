@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { ApprovalComponent } from './approval/approval.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ApprovalComponent } from './approval/approval.component';
     InfoComponent,
     SearchComponent,
     ApprovalComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,

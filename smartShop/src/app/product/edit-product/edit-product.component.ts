@@ -41,8 +41,9 @@ export class EditProductComponent implements OnInit {
         data => {
           console.log(data);
           this.product = data;
+          console.log(this.product.name)
           this.itemForm = this.formBuild.group({
-            name: [this.product.name, [
+            Pname: [this.product.name, [
               Validators.required,
               Validators.minLength(2),
               Validators.maxLength(20)
@@ -66,7 +67,6 @@ export class EditProductComponent implements OnInit {
             Validators.required
             ],
             code: [{ value: this.product.code, disabled: true },
-            Validators.required
             ],
             rate: [this.product.rate_per_quantity,
             Validators.required
@@ -89,7 +89,7 @@ export class EditProductComponent implements OnInit {
     }
     else {
       this.itemForm = this.formBuild.group({
-        name: [this.product.name, [
+        Pname: [this.product.name, [
           Validators.required,
           Validators.minLength(2),
           Validators.maxLength(20)
@@ -133,8 +133,8 @@ export class EditProductComponent implements OnInit {
       })
     }
   }
-  get name() {
-    return this.itemForm.get('name');
+  get Pname() {
+    return this.itemForm.get('Pname');
   }
   get image() {
     return this.itemForm.get('image');
@@ -175,9 +175,13 @@ export class EditProductComponent implements OnInit {
   }
 
   onSubmit() {
+
+    if (!this._product.editClicked)
+      this.product.code = this.itemForm.value['code']
+
     let newItem: Product = {
-      code: this.itemForm.value['code'],
-      name: this.itemForm.value['name'],
+      code: this.product.code,
+      name: this.itemForm.value['Pname'],
       shelf: this.itemForm.value['shelf'],
       aisle: this.itemForm.value['aisle'],
       date_of_manufacture: new Date(this.itemForm.value['dateOfMfg']),
@@ -192,8 +196,14 @@ export class EditProductComponent implements OnInit {
     }
     console.log(newItem);
 
-    this._product.edit(newItem).subscribe();
-    this.editDone = true;
-    this._product.editClicked = false;
+    if (this._product.editClicked) {
+      this._product.edit(newItem).subscribe();
+      this.editDone = true;
+      this._product.editClicked = false;
+    }
+    else {
+      this._product.save(newItem).subscribe();
+      this.addDone = true;
+    }
   }
 }

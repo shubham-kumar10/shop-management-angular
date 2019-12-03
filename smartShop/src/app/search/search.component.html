@@ -12,15 +12,13 @@
                     <input class="form-control" type="text" placeholder="Search" name="search-bar"
                         [(ngModel)]='searchKey' (input)="search()">
                 </div>
-                <div class="col-lg-2 col-md-2 col-sm-2">
-                    <label for="Sort"></label>
-                    <select class="form-control" [(ngModel)]="sortKey" (ngModelChange)="sortFunction()" id="SortBy">
-                        <option disabled selected value>Sort by</option>
-                        <option value="name">Name</option>
-                        <option value="stock">Availibity</option>
-                        <option value="price">Price</option>
-                    </select>
-                </div>
+                <label for="Sort"></label>
+                <select class="form-control" [(ngModel)]="sortKey" (ngModelChange)="sortFunction()" id="SortBy">
+                    <option disabled selected value>Sort by</option>
+                    <option value="name">Name</option>
+                    <option value="stock">Availibity</option>
+                    <option value="price">Price</option>
+                </select>
             </span>
         </div>
     </div>

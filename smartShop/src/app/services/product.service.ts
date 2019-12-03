@@ -19,7 +19,8 @@ export class ProductService {
   isLoggedIn: boolean = false;
   clickedOnAdd: boolean = false;
   private subject = new Subject<Product[]>();
-  url = environment.baseUrl;
+  // url = environment.baseUrl + 'smart-shop/';
+  url = environment.baseUrl
   editClicked: boolean = false;
   billing: boolean = false;
   quantity: number = 0;

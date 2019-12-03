@@ -78,7 +78,7 @@ export class BillingComponent implements OnInit {
       this.error = null;
       this._product.addBill(this.bill).subscribe(
         data => console.log(data),
-        HttpError => console.log(HttpError)
+        HttpError => this.error = HttpError
       );
       this.billDone = true;
       this.empty = true;

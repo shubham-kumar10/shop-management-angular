@@ -28,7 +28,7 @@ export class RegistrationComponent implements OnInit {
     this.signUpForm = this.formBuilder.group({
       username: ['', [
         Validators.required,
-        Validators.maxLength(50),
+        Validators.minLength(3),
         Validators.maxLength(50),
         this.isUsernameTaken
       ]],

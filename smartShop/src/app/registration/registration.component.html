@@ -22,7 +22,7 @@
                         </div>
                         <div class="text-danger" *ngIf="username.errors?.maxlength || username.errors?.minlength">Movie
                             name must
-                            be between 2 to 10 characters only</div>
+                            be between 3 to 10 characters only</div>
                     </div>
 
                     <div class="col-lg-6">
@@ -49,8 +49,7 @@
                         <input type="text" class="form-control mb-2 mr-sm-2" type="text"
                             placeholder="Enter Phone Number" formControlName="contact" id="contact" />
                         <div class="text-danger" *ngIf="contact.invalid && contact.errors.required && contact.touched">
-                            Last Name is
-                            required</div>
+                            Contact is mandatory and must be 10 digits</div>
                     </div>
 
 
