@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { ApprovalComponent } from './approval/approval.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AddProductComponent } from './product/add-product/add-product.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     SearchComponent,
     ApprovalComponent,
     WelcomeComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
