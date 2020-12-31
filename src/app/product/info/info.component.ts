@@ -18,7 +18,7 @@ export class InfoComponent implements OnInit {
   Form: FormGroup;
   quantity: number = 0;
 
-  constructor(private _product: ProductService, private formBuilder: FormBuilder) { }
+  constructor(public _product: ProductService, private formBuilder: FormBuilder) { }
 
 
 

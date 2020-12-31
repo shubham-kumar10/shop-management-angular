@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   invalidLogin: boolean;
   error: string = "Login Failed"
 
-  constructor(private formBuild: FormBuilder, private _authService: AuthenticationService, private router: Router, private productService: ProductService) { }
+  constructor(private formBuild: FormBuilder, public _authService: AuthenticationService, private router: Router, public productService: ProductService) { }
 
   ngOnInit() {
     this.loginForm = this.formBuild.group({

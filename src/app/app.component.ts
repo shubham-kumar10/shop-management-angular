@@ -15,7 +15,7 @@ export class AppComponent {
     this.loggedIn();
     this.router.navigate(['welcome']);
   }
-  constructor(private authService: AuthenticationService, public router: Router, private productService: ProductService) {
+  constructor(public authService: AuthenticationService, public router: Router, public productService: ProductService) {
   }
 
 
