@@ -13,11 +13,15 @@ export class ApprovalComponent implements OnInit {
   list: User[];
   accepted: boolean;
   declined: boolean;
+  empty: boolean;
 
   ngOnInit() {
     this._userService.getPendingUsers().subscribe(
       data => {
         this.list = data;
+        if (this.list.length < 0) {
+          this.empty = true;
+        }
         console.log(data);
       }
     )
