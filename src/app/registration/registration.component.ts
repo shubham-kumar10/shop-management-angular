@@ -190,7 +190,7 @@ export class RegistrationComponent implements OnInit {
       error => {
         console.log("error")
         console.log(error);
-        if (error.status == 500 || error.status == 400) {
+        if (error) {
           this.error = error.message;
           this.userCreated = false;
         }
