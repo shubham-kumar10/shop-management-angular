@@ -1,14 +1,45 @@
-<div class="container d-flex justify-content-center">
-    <div class="col-md-5 mt-5">
-        <h2>Admin List</h2>
-        <div class="alert alert-success" *ngIf="declined">
-            Admin request declined.
-        </div>
-        <div class="alert alert-danger" *ngIf="list.length==0">
-            There are no pending requests for upcoming Shop Managers.
-        </div>
+<div class="container-fluid">
+    <h2>Manager's List</h2>
+    <div class="alert alert-success" *ngIf="declined">
+        Admin request declined.
+    </div>
+    <div class="alert alert-danger" *ngIf="empty">
+        There are no pending requests for upcoming Shop Managers.
+    </div>
 
-        <div class="bs-example" *ngIf="!empty">
+    <div *ngIf="!empty">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Contact No.</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let data of list; let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{data.lastname}}, {{data.firstname}}</td>
+                <td>{{data.username}}</td>
+                <td>{{data.gender}}</td>
+                <td>{{data.contact}}</td>
+                <td>{{data.age}}</td>
+                <td *ngIf="data.status === 'P'">Pending</td>
+                <td>
+                    <a (click)="updateStatus(data,'A')"><i
+                            class="material-icons md-36 mr-3 approve-button">check_circle</i></a>
+                    <a (click)="updateStatus(data,'D')"><i
+                            class=" material-icons md-36 decline-button">highlight_off</i></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- <div class="bs-example" *ngIf="!empty">
             <div class="accordion" id="accordionExample">
                 <div class="card" *ngFor="let data of list">
 
@@ -49,12 +80,9 @@
                                 <a (click)="updateStatus(data,'A')"><i
                                         class="material-icons md-36 float-right approve-button">check_circle</i></a>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> -->
 </div>

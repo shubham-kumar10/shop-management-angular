@@ -19,6 +19,7 @@ export class AuthenticationService {
   //private authenticationApiUrl = environment.baseUrl + 'smart-shop/';
   private token: string;
   username: string;
+  firstname: string;
   pending: boolean = false;
   declined: boolean = false;
 

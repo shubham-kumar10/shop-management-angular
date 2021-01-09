@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit {
         if (data.status == "A") {
           this._authService.setToken(data.token);
           this.error = "Logged In successfully";
-          this._authService.username = this.getUsername();
+          this._authService.username = data.firstname;
           this._authService.loggedIn = true;
           this._authService.validCredentials = true;
           this.router.navigate(['/search-bar'])
